@@ -1,0 +1,62 @@
+.home {
+    background-color: lightblue;
+}
+
+.note {
+    background-color: lightblue;
+}
+
+.task {
+    background-color: #a0dce8;
+}
+
+/* for mutual tags */
+
+.home_link {
+    background-color: #396adb;
+    color: white;
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+}
+
+
+
+.cre_up_btn {
+    background-color: green;
+}
+
+
+.back_btn {
+    background-color: red;
+    color: white;
+    font-family: 'Arial';
+    font-weight: bold;
+    display: block;
+    width: fit-content;
+}
+.back_btn a{
+    text-decoration: none;
+
+}
+
+
+
+.cre_up_btn {
+color: white;
+background-color: green;
+}
+
+
+h1 {
+    color: teal;
+    font-family: arial;
+}
+
+h2 {
+    color: teal;
+    font-family: arial;
+}
+.btn{
+color:red;
+}

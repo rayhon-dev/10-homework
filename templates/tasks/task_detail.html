@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="task">
+    <h1>Task Detail</h1>
+    <h2>Task: {{ task.task_title }}</h2>
+    <h3>Due Date: {{ task.due_date }}</h3>
+    <h3>Description: {{ task.description }}</h3>
+    <button type="submit"><a href="{{ task.get_delete_url }}">Delete Task</a></button>
+    <br>
+    <button><a href="{{ task.get_update_url }}" class="create_btn">Update Task</a></button>
+    <br><br>
+    <button><a href="{% url 'tasks:task_list' %}" class="back_btn">Back to List</a></button>
+
+</body>
+</html>

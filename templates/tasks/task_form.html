@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="task">
+    <h1>{% if task %}Update Task {% else %}Create Task{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="task_title">Task Title</label>
+        <input type="text" id="task_title" name="task_title" value="{{ task.task_title | upper }}">
+        <br><br>
+        <label for="due_date">Due Date</label>
+        <input type="date" id="due_date" name="due_date" value="{{ task.due_date | date:'Y-m-d' }}">
+        <br><br>
+        <label for="description">Description</label>
+        <textarea id="description" name="description">{{ task.description }}</textarea>
+        <br><br>
+        <button type="submit" class="create_btn">{% if task %}Update Task{% else %} Create Task {% endif %}</button>
+        <br><br>
+
+    </form>
+    {% if task %}
+        <button><a href="{{ task.get_detail_url}}" class="back_btn">Back to Detail</a></button>
+    {% else %}
+         <button><a href="{% url 'tasks:task_list' %}" class="back_btn">Back to List</a></button>
+    {% endif %}
+</body>
+</html>
